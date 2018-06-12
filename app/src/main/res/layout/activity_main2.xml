@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="cal_on.usbterminal.USBTerminal">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        tools:context="cal_on.usbterminal.MainActivity$USBTerminalFragment">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:layout_height="80dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.40"
+                    android:background="@drawable/rounded_bordred"
+                    android:layout_margin="5dp">
+                    <Spinner
+                        android:id="@+id/spinner_baudrate"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="40dp"
+                        android:entries="@array/baudrate"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.60"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/btn_connect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:clickable="true"
+                        android:layout_marginLeft="10dp"
+                        android:drawableLeft="@drawable/linkc"
+                       />
+                    <TextView
+                        android:id="@+id/btn_disconnect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:layout_marginLeft="10dp"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/cancel"/>
+                    <TextView
+                        android:id="@+id/tv_save_usb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:drawableRight="@drawable/csv_icon_i"
+                        android:clickable="true"/>
+                    <TextView
+                        android:id="@+id/tv_clear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/garbage"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Logging received data in internal storage path"
+                    android:textColor="@android:color/white"
+                    android:textSize="11sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_filepath"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  [/CAL-ONTerminal/USB_terminal_files/YYMMDD_hhmmss.csv]"
+                    android:textColor="@android:color/white"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Off_Line"
+                android:layout_marginLeft="10dp"
+                android:text="Enter : "
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/time"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"
+                android:textSize="15dp"
+                android:textStyle="italic"
+                android:text="               "/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Send"
+                android:textColor="#000000"
+                android:layout_marginLeft="20dp"
+                android:textSize="15dp"
+                android:textStyle="italic"
+                android:text="Send"/>
+        </LinearLayout>
+        <ListView
+            android:id="@+id/deviceList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_below="@+id/separator" />
+
+        <ScrollView
+            android:id="@+id/demoScrollerusb"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/squareborder"
+            android:minHeight="200dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/consoleTextusb"
+                android:textIsSelectable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:typeface="monospace" />
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

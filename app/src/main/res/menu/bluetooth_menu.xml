@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cal_on.usbterminal.MainActivity">
+    <item
+        android:id="@+id/scan_bluetooth"
+        android:orderInCategory="100"
+        android:title="Scan Bluetooth"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/usb_Shortcut"
+        android:orderInCategory="100"
+        android:title="USB Terminal"
+        app:showAsAction="never" />
+</menu>
